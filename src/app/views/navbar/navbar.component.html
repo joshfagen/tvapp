@@ -1,16 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-  <div class="container mt-2">
-    <a class="navbar-brand" href="/home">TV Show Finder</a>
+<mat-toolbar color="accent">
+  <mat-toolbar-row style="height: 100px;">
+    <span>TVMaze App</span>
+    <span class="example-spacer"></span>
+    <form ngForm #ShowSearch class="form">
 
-
-      <form>
-      <div class="form-group mt-2">
-
-          <input type="text" name="show" id="show" class="my-auto mr-2" style="width: 300px; background-color: lavender; text-align: center;" placeholder="Type here to find your favourite show!" >
-          <button type="button" class="my-auto ml-1 btn btn-success" (click)="search()">Search</button>
-      </div>
-      </form>
-
-  </div>
-</nav>
+      <mat-form-field>
+        <input matInput #assignmentName
+               name="name" placeholder="Show"
+               type="text"
+               [(ngModel)]="searchQuery">
+               <button mat-button
+                       *ngIf="searchQuery"
+                       matSuffix mat-icon-button
+                       (click)="searchQuery = ''">
+                 <mat-icon>close</mat-icon>
+               </button>
+      </mat-form-field>
+      <button mat-flat-button (click)="onSubmit()" background-color="primary">Search</button>
+    </form>
+  </mat-toolbar-row>
+</mat-toolbar>
 

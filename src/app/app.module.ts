@@ -4,11 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './views/navbar/navbar.component';
-
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './views/home/home.component';
 import { ShowsComponent } from './shows/shows.component';
 import { ShowComponent } from './show/show.component';
-import {MatCardModule} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule } from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +23,15 @@ import {MatCardModule} from '@angular/material';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
