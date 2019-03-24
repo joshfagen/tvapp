@@ -8,13 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   show: string;
   constructor() { }
-    url = 'http://api.tvmaze.com/search/shows?q=';
+
   ngOnInit() {
   }
 
   search() {
-    this.show = document.getElementById('show').innerText;
-    let showCleaned = trim(this.show);
 
 
   }
