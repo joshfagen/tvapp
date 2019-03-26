@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/purple-green.css";
 
-body {
-  font-family: "Papyrus", sans-serif;
-  text-decoration: none;
-  background-color: #CCFF90;
+* {
+  font-family: "Papyrus", arial, sans-serif;
 }
 
+body {
+  text-decoration: none;
+  background-color: #E2D5CC;
+}

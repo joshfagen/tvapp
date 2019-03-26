@@ -6,7 +6,7 @@ import { NavbarComponent } from './views/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './views/home/home.component';
 import { ShowsComponent } from './views/shows/shows.component';
-import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule } from '@angular/material';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatTableModule, MatToolbarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { EpisodesComponent } from './views/episodes/episodes.component';
@@ -36,7 +36,8 @@ import { SearchresultComponent } from './views/searchresult/searchresult.compone
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
