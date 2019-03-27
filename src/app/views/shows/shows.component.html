@@ -1,3 +1,34 @@
-<p>
-  shows works!
-</p>
+
+<mat-accordion>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{show.title}}
+      <span>Premiered: {{show.premiered}}</span>
+      <span>Status: {{show.status}}</span>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <ng-container *ngTemplateOutlet="matExpansionPanelContent"></ng-container>
+  <mat-action-row>
+    <button mat-button (click)="myPanel.expanded = false">CLOSE</button>
+  </mat-action-row>
+</mat-expansion-panel>
+<ng-template #matExpansionPanelContent>
+  <div>
+    <img src="{{show.image.medium}}">
+  </div>
+  <div>
+    <p>{{show.summary}}</p>
+    <p>
+      <span>Last Ep: {{show.lastEp.title}}</span>
+      <span>Next Ep: {{show.nextEp.title}}</span>
+    </p>
+    <hr>
+    <div>
+      <button mat-flat-button (click)="details(show)" color="primary">Details</button>
+    </div>
+  </div>
+
+</ng-template>
+</mat-accordion>

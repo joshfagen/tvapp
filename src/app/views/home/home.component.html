@@ -1,6 +1,8 @@
 <div class="jumbotron mx-5 mt-5 text-center">
-  <div class="container">
+ <div *ngIf="shows; else welcome">
+   <app-searchresult></app-searchresult>
+ </div>
+  <ng-template #welcome><div class="container">
     <h1>Use the Search Bar to Explore!</h1>
-  </div>
-  <app-searchresult></app-searchresult>
+  </div></ng-template>
 </div>

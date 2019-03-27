@@ -1,21 +1,18 @@
 export class Episode {
   // region Attributes
-  name: string;
-
-
+  season: number;
+  number: number;
+  title: string;
+  aired: Date;
   // endregion
   constructor(args?) {
+
     if(args) {
-      this.name = args.name;
-      this.image = args.image;
-      this.website = args.website;
-      this.phone = args.phone;
-      this.rating = args.rating;
-      this.avgMealPrice = args.avgMealPrice;
-      this.address = args.location;
-      this.reviews = args.reviews;
+      this.season = args.season;
+      this.number = args.season * 100 + args.epNumber;
+      this.title = args.name;
+      this.aired = args.airdate;
     }
-    this.loggerService.log('restaurant');
   }
 
 
