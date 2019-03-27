@@ -24,6 +24,8 @@ import { SearchresultComponent } from './views/searchresult/searchresult.compone
 import { ScheduleComponent } from './views/schedule/schedule.component';
 import { ShowsPageComponent } from './views/shows-page/shows-page.component';
 import {ActivatedRoute, RouterModule} from '@angular/router';
+import { NotfoundComponent } from './views/notfound/notfound.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import {ActivatedRoute, RouterModule} from '@angular/router';
     SearchresultComponent,
     ScheduleComponent,
     ShowsPageComponent,
+    NotfoundComponent,
 
   ],
   imports: [
@@ -51,7 +54,8 @@ import {ActivatedRoute, RouterModule} from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatTableModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

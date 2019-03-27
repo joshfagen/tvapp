@@ -1,25 +1,9 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row style="height: 150px;">
-    <span style="color: #69F0AE; font-size: 64px;">TVMAZE APP</span>
+    <span style="font-size: 64px;"><a routerLink="/home">TVMAZE APP</a></span>
     <span class="example-spacer"></span>
 
-    <form ngForm #ShowSearch class="form">
 
-      <mat-form-field>
-        <input matInput
-               name="name" placeholder="Enter Show"
-               color="accent"
-               type="text"
-               [(ngModel)]="searchQuery">
-               <button tabIndex="-1" mat-button
-                       *ngIf="searchQuery"
-                       matSuffix mat-icon-button
-                       (click)="searchQuery = ''">
-                 <mat-icon>close</mat-icon>
-               </button>
-      </mat-form-field>
-      <button mat-flat-button routerLink="/shows/{{searchQuery}}" color="accent">Search</button>
-    </form>
   </mat-toolbar-row>
 </mat-toolbar>
 

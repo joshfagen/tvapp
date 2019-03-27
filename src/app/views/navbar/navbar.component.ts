@@ -7,7 +7,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  searchQuery: string;
   constructor(private route: ActivatedRoute,
               private router: Router) { }
 

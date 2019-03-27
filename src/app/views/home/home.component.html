@@ -1,8 +1,26 @@
+<app-navbar></app-navbar>
+  <form ngForm #ShowSearch class="form">
+
+  <mat-form-field>
+    <input matInput
+           name="name" placeholder="Enter Show"
+           color="primary"
+           type="text"
+           [(ngModel)]="searchQuery">
+    <button tabIndex="-1" mat-button
+            *ngIf="searchQuery"
+            matSuffix mat-icon-button
+            (click)="searchQuery = ''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-flat-button routerLink="/shows/{{searchQuery}}" color="accent">Search</button>
+  </form>
+
+
 <div class="jumbotron mx-5 mt-5 text-center">
- <div *ngIf="shows; else welcome">
-   <app-searchresult></app-searchresult>
- </div>
-  <ng-template #welcome><div class="container">
+  <div class="container">
     <h1>Use the Search Bar to Explore!</h1>
-  </div></ng-template>
+  </div>
 </div>
+

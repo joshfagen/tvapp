@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
-import { ActivatedRoute, Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { ShowsComponent } from './views/shows/shows.component';
 import {EpisodesComponent} from './views/episodes/episodes.component';
+import {HomeComponent} from './views/home/home.component';
+import {NotfoundComponent} from './views/notfound/notfound.component';
 
 const routes: Routes = [
-  {path: 'details/:id', component: EpisodesComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'shows/:query', component: ShowsComponent},
-  // {path: '**', component: NotFoundComponent}
+  {path: 'shows/details/:id', component: EpisodesComponent},
+  {path: '**', component: NotfoundComponent}
 ];
 
 @NgModule({
