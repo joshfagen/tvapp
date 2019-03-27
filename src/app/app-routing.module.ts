@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { ActivatedRoute, Routes, RouterModule } from '@angular/router';
+import { ShowsComponent } from './views/shows/shows.component';
+import {EpisodesComponent} from './views/episodes/episodes.component';
 
 const routes: Routes = [
-  // {path: 'show/:id', component: ShowComponent},
-  // {path: 'search/:query', component: ShowsComponent},
+  {path: 'show/:id', component: EpisodesComponent},
+  {path: 'search/:query', component: ShowsComponent},
   // {path: '**', component: NotFoundComponent}
 ];
 

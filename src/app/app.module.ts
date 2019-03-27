@@ -23,6 +23,7 @@ import { VisitedComponent } from './views/visited/visited.component';
 import { SearchresultComponent } from './views/searchresult/searchresult.component';
 import { ScheduleComponent } from './views/schedule/schedule.component';
 import { ShowsPageComponent } from './views/shows-page/shows-page.component';
+import {ActivatedRoute, RouterModule} from '@angular/router';
 
 
 @NgModule({

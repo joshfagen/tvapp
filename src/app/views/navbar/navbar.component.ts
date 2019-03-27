@@ -7,8 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  private router: any;
-
   constructor(private router: Router) { }
 
   ngOnInit() {

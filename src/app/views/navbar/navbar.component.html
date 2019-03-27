@@ -11,7 +11,7 @@
                color="accent"
                type="text"
                [(ngModel)]="searchQuery">
-               <button mat-button
+               <button tabIndex="-1" mat-button
                        *ngIf="searchQuery"
                        matSuffix mat-icon-button
                        (click)="searchQuery = ''">
