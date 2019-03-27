@@ -6,7 +6,7 @@
     <form ngForm #ShowSearch class="form">
 
       <mat-form-field>
-        <input matInput #showName
+        <input matInput
                name="name" placeholder="Enter Show"
                color="accent"
                type="text"
@@ -18,7 +18,7 @@
                  <mat-icon>close</mat-icon>
                </button>
       </mat-form-field>
-      <button mat-flat-button (click)="setSelected(showName)" color="accent">Search</button>
+      <button mat-flat-button routerLink="/shows/{{searchQuery}}" color="accent">Search</button>
     </form>
   </mat-toolbar-row>
 </mat-toolbar>
