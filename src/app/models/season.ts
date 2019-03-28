@@ -9,7 +9,7 @@ export class Season {
     this.id = args.id;
     this.seasonNumber = args.number;
     this.image = (args.image) ? args.image.medium : null;
-    this.dates = args.startDate + ' to ' + args.endDate;
+    this.dates = args.premiereDate + ' / ' + args.endDate;
 
   }
 

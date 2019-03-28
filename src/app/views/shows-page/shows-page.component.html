@@ -1,33 +1,18 @@
-<h1>{{show.title}}</h1>
-<div *ngFor="let season of show.seasons">
-  <mat-expansion-panel>
+
+<mat-accordion>
+
+  <mat-expansion-panel *ngFor="let season of seasons">
     <mat-expansion-panel-header>
+      <mat-panel-title style="font-size: 24px;"> Season #{{season.seasonNumber}}</mat-panel-title>
       <mat-panel-title>
-        Season {{season}}
-        <span>Premiered: {{show.premiered}}</span>
-        <span>Status: {{show.status}}</span>
+        Duration: {{season.dates}}
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <ng-container *ngTemplateOutlet="matExpansionPanelContent"></ng-container>
-    <mat-action-row>
-      <button mat-button (click)="myPanel.expanded = false">CLOSE</button>
-    </mat-action-row>
+    <img src="{{season.image}}" alt="{{season.number}}">
+
+
   </mat-expansion-panel>
-  <ng-template #matExpansionPanelContent>
-    <div>
-      <img src="{{show.image.medium}}">
-    </div>
-    <div>
-      <p>{{show.summary}}</p>
-      <p>
-        <span>Last Ep: {{show.lastEp.title}}</span>
-        <span>Next Ep: {{show.nextEp.title}}</span>
-      </p>
-      <hr>
-      <div>
-        <button mat-flat-button (click)="details(show)" color="primary">Details</button>
-      </div>
-    </div>
-  </ng-template>
-</div>
+
+</mat-accordion>
+
 

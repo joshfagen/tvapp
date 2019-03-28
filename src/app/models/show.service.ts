@@ -8,6 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class ShowService {
   baseUrl = 'http://api.tvmaze.com/';
+
    constructor(private http: HttpClient) {
   }
 
@@ -17,6 +18,7 @@ export class ShowService {
   }
 
   getSeasons(seasonId): Observable<any[]> {
+     console.log(seasonId);
      const url = this.baseUrl + 'shows/' + seasonId + '/seasons';
      return this.http.get<any[]>(url);
   }
