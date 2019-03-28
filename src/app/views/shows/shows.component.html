@@ -1,34 +1,19 @@
-<app-navbar></app-navbar>
+
 <mat-accordion>
 
-<mat-expansion-panel>
+<mat-expansion-panel *ngFor="let show of shows">
   <mat-expansion-panel-header>
-    <mat-panel-title>
-      {{show.title}}
-      <span>Premiered: {{show.premiered}}</span>
-      <span>Status: {{show.status}}</span>
-    </mat-panel-title>
+    <mat-panel-title style="font-size: 24px;">{{show.title}}</mat-panel-title>
+    <mat-panel-title *ngIf="show.premiered">Premiered: {{show.premiered}}</mat-panel-title>
+    <mat-panel-title>Status: {{show.status}}</mat-panel-title>
+    <mat-panel-title *ngIf="show.rating">Rating: {{show.rating}} / 10</mat-panel-title>
   </mat-expansion-panel-header>
-  <ng-container *ngTemplateOutlet="matExpansionPanelContent"></ng-container>
-  <mat-action-row>
-    <button mat-button (click)="myPanel.expanded = false">CLOSE</button>
-  </mat-action-row>
-</mat-expansion-panel>
-<ng-template #matExpansionPanelContent>
+  <img src="{{show.image}}" alt="{{show.title}}">
   <div>
-    <img src="{{image.medium}}">
-  </div>
-  <div>
-    <p>{{show.summary}}</p>
-    <p>
-      <span>Last Ep: {{show.lastEp.title}}</span>
-      <span>Next Ep: {{show.nextEp.title}}</span>
-    </p>
-    <hr>
-    <div>
-      <button mat-flat-button (click)="details(show)" color="primary">Details</button>
-    </div>
+    <span [innerHTML]="show.summary" style="font-size: 24px;"></span>
+    <button mat-stroked-button color="accent" style="background-color: #7B1FA2;" routerLink="/episodes/{{show.id}}">More Info</button>
   </div>
 
-</ng-template>
+  </mat-expansion-panel>
+
 </mat-accordion>

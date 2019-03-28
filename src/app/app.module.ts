@@ -14,7 +14,7 @@ import {
   MatTableModule,
   MatToolbarModule,
   MatExpansionModule,
-  MatAccordion
+  MatAccordion, MatSidenavModule, MatListModule
 } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -26,6 +26,9 @@ import { ShowsPageComponent } from './views/shows-page/shows-page.component';
 import {ActivatedRoute, RouterModule} from '@angular/router';
 import { NotfoundComponent } from './views/notfound/notfound.component';
 import {HttpClientModule} from '@angular/common/http';
+
+import { LayoutModule } from '@angular/cdk/layout';
+
 
 
 @NgModule({
@@ -39,7 +42,7 @@ import {HttpClientModule} from '@angular/common/http';
     SearchresultComponent,
     ScheduleComponent,
     ShowsPageComponent,
-    NotfoundComponent,
+    NotfoundComponent
 
   ],
   imports: [
@@ -55,7 +58,10 @@ import {HttpClientModule} from '@angular/common/http';
     MatButtonModule,
     MatTableModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

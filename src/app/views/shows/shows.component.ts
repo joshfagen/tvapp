@@ -8,30 +8,26 @@ import {Show} from '../../models/show';
   templateUrl: './shows.component.html',
   styleUrls: ['./shows.component.scss']
 })
+
 export class ShowsComponent implements OnInit {
   query: string;
-  shows: any[];
+  shows: Show[];
   constructor(private route: ActivatedRoute,
               private router: Router,
               private showServ: ShowService) {
-    this.route.paramMap.subscribe(params => {
-      this.query = params.get('query');
-    })
+   this.query = this.route.snapshot.paramMap.get('query');
+   this.showServ.getShows(this.query).subscribe(
+     result => {
+       this.shows = [];
+       result.map((obj) => {
+         this.shows.push(new Show(obj.show));
+       });
+     }
+   );
+
   }
 
   ngOnInit() {
-    this.showServ.getShows(this.query).subscribe(
-      (result) => {
-        let counter = 9;
-        while (counter >= 0) {
-         this.shows.push(result.show);
-         counter--;
-        }
-        console.log(result);
-        console.log(this.shows);
-        return this.shows;
-      }
-    );
   }
 
 

@@ -13,11 +13,16 @@ export class ShowService {
 
   getShows(show): Observable<any> {
      const url = this.baseUrl + 'search/shows?q=' + show;
-     return this.http.get(url);
+     return this.http.get<any[]>(url);
+  }
+
+  getSeasons(seasonId): Observable<any[]> {
+     const url = this.baseUrl + 'shows/' + seasonId + '/seasons';
+     return this.http.get<any[]>(url);
   }
 
   getEpisodes(show): Observable<any> {
      const url = this.baseUrl + 'search/shows?q=' + show + '&embed=episodes';
-     return this.http.get(url);
+     return this.http.get<any[]>(url);
   }
 }
