@@ -6,13 +6,11 @@ export class Episode {
   aired: Date;
   // endregion
   constructor(args?) {
-
-    if(args) {
       this.season = args.season;
       this.number = args.season * 100 + args.epNumber;
       this.title = args.name;
       this.aired = args.airdate;
-    }
+
   }
 
 

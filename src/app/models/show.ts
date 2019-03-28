@@ -13,6 +13,7 @@ export class Show {
   rating: number;
 
   // endregion
+
   constructor(args?) {
       this.id = args.id;
       this.title = args.name;

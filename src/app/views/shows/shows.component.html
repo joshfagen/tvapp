@@ -4,9 +4,13 @@
 <mat-expansion-panel *ngFor="let show of shows">
   <mat-expansion-panel-header>
     <mat-panel-title style="font-size: 24px;">{{show.title}}</mat-panel-title>
-    <mat-panel-title *ngIf="show.premiered">Premiered: {{show.premiered}}</mat-panel-title>
-    <mat-panel-title>Status: {{show.status}}</mat-panel-title>
-    <mat-panel-title *ngIf="show.rating">Rating: {{show.rating}} / 10</mat-panel-title>
+    <mat-panel-title>
+      <span *ngIf="show.premiered">Premiered: {{show.premiered}}</span>
+      <span *ngIf="show.premiered && (show.status || show.rating)"> | </span>
+      <span>Status: {{show.status}} </span>
+      <span *ngIf="show.status && (show.rating)"> | </span>
+      <span *ngIf="show.rating"> Rating: {{show.rating}} / 10</span>
+    </mat-panel-title>
   </mat-expansion-panel-header>
   <img src="{{show.image}}" alt="{{show.title}}">
   <div>
