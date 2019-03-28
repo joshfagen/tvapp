@@ -21,8 +21,8 @@ export class ShowService {
      return this.http.get<any[]>(url);
   }
 
-  getEpisodes(show): Observable<any> {
-     const url = this.baseUrl + 'search/shows?q=' + show + '&embed=episodes';
+  getEpisodes(seasonId): Observable<any> {
+     const url = this.baseUrl + 'seasons/' + seasonId + '/episodes';
      return this.http.get<any[]>(url);
   }
 }
