@@ -13,8 +13,9 @@
     </mat-panel-title>
   </mat-expansion-panel-header>
   <img src="{{show.image}}" alt="{{show.title}}">
+  <span [innerHTML]="show.summary" style="font-size: 24px;"></span>
   <div>
-    <span [innerHTML]="show.summary" style="font-size: 24px;"></span>
+
     <button mat-stroked-button color="accent" style="background-color: #7B1FA2;" routerLink="/episodes/{{show.id}}">More Info</button>
   </div>
 

@@ -4,9 +4,10 @@
   <mat-expansion-panel *ngFor="let season of seasons">
     <mat-expansion-panel-header>
       <mat-panel-title style="font-size: 24px;"> Season #{{season.seasonNumber}}</mat-panel-title>
-      <mat-panel-title>
-        Duration: {{season.dates}}
+      <mat-panel-title *ngIf="season.startDate; else upcoming">
+        {{season.startDate}} to {{season.endDate}}
       </mat-panel-title>
+      <ng-template #upcoming><mat-panel-title style="color: green;">Upcoming</mat-panel-title></ng-template>
     </mat-expansion-panel-header>
     <img src="{{season.image}}" width="150" alt="{{season.seasonNumber}}" style="margin-bottom: 15px;">
     <app-episodes [id]="season.id"></app-episodes>
