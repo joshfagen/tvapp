@@ -1,13 +1,15 @@
 <mat-accordion>
 
-  <mat-expansion-panel title='{{episode.summary}}' *ngFor="let episode of episodes" >
+  <mat-expansion-panel title='Click for an episode summary!' *ngFor="let episode of episodes" >
     <mat-expansion-panel-header>
       <mat-panel-title style="font-size: 20px;"> Episode #{{episode.epNumber}}</mat-panel-title>
       <mat-panel-title>
         <b>{{episode.aired}}</b>
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <img *ngIf="episode.image" src="{{episode.image}}" width="150" alt="{{episode.epNumber}}" style="margin-right: 15px; float: left;">
       <span [innerHTML]="episode.summary"></span>
+
 
   </mat-expansion-panel>
 

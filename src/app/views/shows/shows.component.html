@@ -12,12 +12,14 @@
       <span *ngIf="show.rating"> Rating: {{show.rating}} / 10</span>
     </mat-panel-title>
   </mat-expansion-panel-header>
-  <img src="{{show.image}}" alt="{{show.title}}">
+  <ng-template matExpansionPanelContent>
+  <img style="float: left; margin: 15px; width: 100px;" src="{{show.image}}" alt="{{show.title}}">
   <span [innerHTML]="show.summary" style="font-size: 24px;"></span>
-  <div>
-
+    <hr>
     <button mat-stroked-button color="accent" style="background-color: #7B1FA2;" routerLink="/episodes/{{show.id}}">More Info</button>
-  </div>
+  </ng-template>
+
+
 
   </mat-expansion-panel>
 

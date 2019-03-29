@@ -9,7 +9,7 @@
       </mat-panel-title>
       <ng-template #upcoming><mat-panel-title style="color: green;">Upcoming</mat-panel-title></ng-template>
     </mat-expansion-panel-header>
-    <img src="{{season.image}}" width="150" alt="{{season.seasonNumber}}" style="margin-bottom: 15px;">
+    <img *ngIf="season.image" src="{{season.image}}" width="150" alt="{{season.seasonNumber}}" style="margin-bottom: 15px;">
     <app-episodes [id]="season.id"></app-episodes>
 
   </mat-expansion-panel>
