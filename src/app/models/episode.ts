@@ -1,16 +1,15 @@
 export class Episode {
   // region Attributes
-  season: number;
-  number: number;
+  epNumber: number;
   title: string;
-  aired: Date;
+  aired: string;
+  summary: string;
   // endregion
   constructor(args?) {
-      this.season = args.season;
-      this.number = args.season * 100 + args.epNumber;
+      this.epNumber = args.number;
       this.title = args.name;
       this.aired = args.airdate;
-
+      this.summary = args.summary;
   }
 
 

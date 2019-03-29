@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Season} from '../../models/season';
 import {Show} from '../../models/show';
 import {Episode} from '../../models/episode';
@@ -13,6 +13,8 @@ import {ShowService} from '../../models/show.service';
 export class ShowsPageComponent implements OnInit {
   id: string;
   seasons: Season[];
+  @Input() showId: number;
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private showServ: ShowService) {

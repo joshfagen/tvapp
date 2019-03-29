@@ -1,4 +1,4 @@
-
+<!--<app-shows [id] = "show.id"></app-shows>-->
 <mat-accordion>
 
   <mat-expansion-panel *ngFor="let season of seasons">
@@ -8,8 +8,8 @@
         Duration: {{season.dates}}
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <img src="{{season.image}}" alt="{{season.number}}">
-
+    <img src="{{season.image}}" width="150" alt="{{season.seasonNumber}}" style="margin-bottom: 15px;">
+    <app-episodes [id]="season.id"></app-episodes>
 
   </mat-expansion-panel>
 

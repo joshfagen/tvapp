@@ -1,3 +1,14 @@
-<p>
-  episodes works!
-</p>
+<mat-accordion>
+
+  <mat-expansion-panel *ngFor="let episode of episodes">
+    <mat-expansion-panel-header>
+      <mat-panel-title style="font-size: 24px;"> Episode #{{episode.epNumber}}</mat-panel-title>
+      <mat-panel-title>
+        Aired: {{episode.aired}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    {{episode.summary}}
+
+  </mat-expansion-panel>
+
+</mat-accordion>
