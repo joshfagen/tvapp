@@ -44,14 +44,13 @@ export class ShowsComponent implements OnInit {
     );
   }
 
-  // getEpisodes() looks for previousEpUrl and nextEpUrl and uses them to create Episode objects.
+  // getEpisodes() looks for previousEpUrl and nextEpUrl and uses them to create Episode objects via the service.
   getEpisodes() {
     console.log('looking for previous and next episodes.');
     this.shows.map(
       show => {
         if (show.previousEpUrl) {
             this.showServ.getEpisode(show.previousEpUrl).subscribe(result => {
-              console.log(result);
               const episode = new Episode(result);
               show.setPrevEp(episode);
             }
@@ -59,7 +58,6 @@ export class ShowsComponent implements OnInit {
         }
         if (show.nextEpUrl) {
           this.showServ.getEpisode(show.nextEpUrl).subscribe(result => {
-            console.log(result);
               const episode = new Episode(result);
               show.setNextEp(episode);
             }
