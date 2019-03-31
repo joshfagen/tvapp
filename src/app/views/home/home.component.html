@@ -1,4 +1,4 @@
-<!--<app-navbar></app-navbar>-->
+<!--Home Page - has search box and welcome message. Nothing much doing in the .ts file, but .scss file implements lots of rules to center it. -->
   <form ngForm #ShowSearch>
 
   <mat-form-field>
@@ -12,6 +12,7 @@
             (click)="searchQuery = ''">
       <mat-icon>close</mat-icon>
     </button>
+    <!--When button's clicked, the user is sent to the search results page. Their query is appended to the route via [(ngModel]) above in the input field.-->
     <button mat-flat-button routerLink="/shows/{{searchQuery}}" color="accent">Search</button>
   </mat-form-field>
 

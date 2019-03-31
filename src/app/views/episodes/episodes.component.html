@@ -1,14 +1,20 @@
+<!--Inside of a mat-accordion, render mat-expansion panels for each episode of a season-->
 <mat-accordion>
 
   <mat-expansion-panel title='Click for an episode summary!' *ngFor="let episode of episodes" >
     <mat-expansion-panel-header>
+      <!--Print each episode number, name and date-->
       <mat-panel-title> Episode #{{episode.epNumber}}</mat-panel-title>
-      <mat-panel-title>
-        <b>{{episode.aired}}</b>
+      <mat-panel-title *ngIf="episode.epName">
+        <b>{{episode.epName| titlecase}}</b>
+      </mat-panel-title>
+      <mat-panel-title *ngIf="episode.aired">
+        <b>{{episode.aired | date: mediumDate}}</b>
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <!--If available, display an episode image and summary. -->
     <img *ngIf="episode.image" src="{{episode.image}}" alt="{{episode.epNumber}}">
-      <span [innerHTML]="episode.summary"></span>
+      <span *ngIf="episode.summary" id="summary" [innerHTML]="episode.summary"></span>
 
 
   </mat-expansion-panel>

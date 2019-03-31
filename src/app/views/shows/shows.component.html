@@ -1,10 +1,11 @@
-
+<!--Inside of a mat-accordion, render mat-expansion panels for each show returned as part of the search results-->
 <mat-accordion>
 
 <mat-expansion-panel *ngFor="let show of shows">
   <mat-expansion-panel-header>
     <mat-panel-title style="font-size: 24px;">{{show.title}}</mat-panel-title>
     <mat-panel-title>
+      <!--Display premiere date, status, rating, and network for each show (where available)-->
       <span *ngIf="show.premiered">Premiered: {{show.premiered}}</span>
       <span *ngIf="show.premiered && (show.status || show.rating)"> | </span>
       <span>Status: {{show.status}} </span>
@@ -15,7 +16,8 @@
     </mat-panel-title>
   </mat-expansion-panel-header>
   <ng-template matExpansionPanelContent>
-  <img style="float: left; margin: 15px; width: 100px;" src="{{show.image}}" alt="{{show.title}}">
+    <!--For when the caret is clicked to expand the panel, let's display the show image, a quick plot summary, and a button routing to the episodes page. We'll also put a line separating the button from the rest of the content. -->
+  <img src="{{show.image}}" alt="{{show.title}}">
   <span [innerHTML]="show.summary" style="font-size: 24px;"></span>
     <hr>
     <button mat-stroked-button color="accent" style="background-color: #7B1FA2;" routerLink="/episodes/{{show.id}}">More Info</button>

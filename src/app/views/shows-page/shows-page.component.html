@@ -1,16 +1,19 @@
-<!--<app-shows [id] = "show.id"></app-shows>-->
+<!--This page displays the season/episode info for a specific show. A mat-accordion contains all of the seasons, with the run-dates. If the run-date isn't available it should be listed as "upcoming"-->
 
 <mat-accordion>
 
   <mat-expansion-panel *ngFor="let season of seasons">
     <mat-expansion-panel-header>
-      <mat-panel-title style="font-size: 24px;"> Season {{season.seasonNumber}}</mat-panel-title>
-      <mat-panel-title *ngIf="season.startDate; else upcoming">
-        {{season.startDate}} to {{season.endDate}}
+      <mat-panel-title> Season {{season.seasonNumber}}</mat-panel-title>
+      <mat-panel-title id="upcoming" *ngIf="!season.startDate; else dates">Upcoming
       </mat-panel-title>
-      <ng-template #upcoming><mat-panel-title style="color: green;">Upcoming</mat-panel-title></ng-template>
+      <ng-template #dates>
+        <mat-panel-title>
+          <b>{{season.startDate | date: mediumDate}} to {{season.endDate | date: mediumDate}}</b>
+        </mat-panel-title>
+      </ng-template>
     </mat-expansion-panel-header>
-    <img *ngIf="season.image" src="{{season.image}}" width="150" alt="{{season.seasonNumber}}" style="margin-bottom: 15px;">
+    <img *ngIf="season.image" src="{{season.image}}" alt="{{season.seasonNumber}}" >
     <app-episodes [id]="season.id"></app-episodes>
 
   </mat-expansion-panel>
