@@ -1,9 +1,10 @@
 <!--<app-shows [id] = "show.id"></app-shows>-->
+
 <mat-accordion>
 
   <mat-expansion-panel *ngFor="let season of seasons">
     <mat-expansion-panel-header>
-      <mat-panel-title style="font-size: 24px;"> Season #{{season.seasonNumber}}</mat-panel-title>
+      <mat-panel-title style="font-size: 24px;"> Season {{season.seasonNumber}}</mat-panel-title>
       <mat-panel-title *ngIf="season.startDate; else upcoming">
         {{season.startDate}} to {{season.endDate}}
       </mat-panel-title>

@@ -2,7 +2,7 @@ export class Episode {
   // region Attributes
   epNumber: number;
   title: string;
-  aired: string;
+  aired: Date;
   summary: string;
   image: string;
   // endregion

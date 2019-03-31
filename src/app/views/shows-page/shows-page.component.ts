@@ -19,6 +19,13 @@ export class ShowsPageComponent implements OnInit {
               private router: Router,
               private showServ: ShowService) {
     this.id = this.route.snapshot.paramMap.get('id');
+  }
+
+  ngOnInit() {
+    this.getSeasons();
+    this.getShow();
+  }
+  getSeasons() {
 
     this.showServ.getSeasons(this.id).subscribe(result => {
         this.seasons = [];
@@ -29,7 +36,7 @@ export class ShowsPageComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-  }
+  getShow() {
 
+  }
 }

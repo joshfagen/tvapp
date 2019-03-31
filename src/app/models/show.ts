@@ -11,6 +11,7 @@ export class Show {
   nextEp: Episode;
   image: string;
   rating: number;
+  network: string;
 
   // endregion
 
@@ -20,10 +21,11 @@ export class Show {
       this.premiered = args.premiered;
       this.status = args.status;
       this.summary = args.summary;
-      this.lastEp = args.previousepisode;
+      this.lastEp = args.previousepisode.airdate;
       this.nextEp = args.nextepisode;
       this.image = (args.image) ? args.image.medium : null;
       this.rating = (args.rating) ? args.rating.average : null;
+      this.network = args.network.name;
 
   }
 

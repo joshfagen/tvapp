@@ -8,8 +8,10 @@
       <span *ngIf="show.premiered">Premiered: {{show.premiered}}</span>
       <span *ngIf="show.premiered && (show.status || show.rating)"> | </span>
       <span>Status: {{show.status}} </span>
-      <span *ngIf="show.status && (show.rating)"> | </span>
+      <span *ngIf="show.status && (show.rating) || show.status && show.network"> | </span>
       <span *ngIf="show.rating"> Rating: {{show.rating}} / 10</span>
+      <span *ngIf="show.rating && show.network"> | </span>
+      <span>Network: {{show.network}}</span>
     </mat-panel-title>
   </mat-expansion-panel-header>
   <ng-template matExpansionPanelContent>
