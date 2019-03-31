@@ -12,13 +12,15 @@
       <span *ngIf="show.status && (show.rating) || show.status && show.network"> | </span>
       <span *ngIf="show.rating"> Rating: {{show.rating}} / 10</span>
       <span *ngIf="show.rating && show.network"> | </span>
-      <span>Network: {{show.network}}</span>
+      <span *ngIf="show.network">Network: {{show.network}}</span>
     </mat-panel-title>
   </mat-expansion-panel-header>
   <ng-template matExpansionPanelContent>
-    <!--For when the caret is clicked to expand the panel, let's display the show image, a quick plot summary, and a button routing to the episodes page. We'll also put a line separating the button from the rest of the content. -->
-  <img src="{{show.image}}" alt="{{show.title}}">
+    <!--For when the caret is clicked to expand the panel, let's display the show image, a quick plot summary, and a button routing to the episodes page. We'll then display the upcoming and most recent episodes, if possible.-->
+  <img *ngIf="show.image" src="{{show.image}}" alt="{{show.title}}">
   <span [innerHTML]="show.summary" style="font-size: 24px;"></span>
+    <p *ngIf="show.nextEp"><b>Upcoming Episode:</b> {{show.nextEp.epName}} | Airing : {{show.nextEp.aired | date: mediumDate}}</p>
+    <p *ngIf="show.previousEp"><b>Last Episode:</b> {{show.previousEp.epName}} | Aired: {{show.previousEp.aired | date: mediumDate}}</p>
     <hr>
     <button mat-stroked-button color="accent" style="background-color: #7B1FA2;" routerLink="/episodes/{{show.id}}">More Info</button>
   </ng-template>

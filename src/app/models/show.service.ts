@@ -22,19 +22,18 @@ export class ShowService {
 
   //getSeasons() used to produce seasons when "More Info" button is called. Called in shows-page.component.ts
   getSeasons(seasonId): Observable<any[]> {
-     console.log(seasonId);
      const url = this.baseUrl + 'shows/' + seasonId + '/seasons';
      return this.http.get<any[]>(url);
   }
 
-  //getEpisodes() is used to render episodes within each season. Called in episodes.component.ts.
+  // getEpisodes() is used to render episodes within each season. Called in episodes.component.ts.
   getEpisodes(seasonId): Observable<any> {
      const url = this.baseUrl + 'seasons/' + seasonId + '/episodes';
      return this.http.get<any[]>(url);
   }
 
+  // to get a single episode for prevEp and nextEp the following method is used.
   getEpisode(url): Observable<any> {
-     console.log(url);
      return this.http.get<any[]>(url);
   }
 }

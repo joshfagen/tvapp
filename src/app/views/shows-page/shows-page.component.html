@@ -13,6 +13,7 @@
         </mat-panel-title>
       </ng-template>
     </mat-expansion-panel-header>
+    <!--When caret on Season panel is clicked, we render the season image if available. Also, where possible the episodes of the season are called via the app-episodes component. -->
     <img *ngIf="season.image" src="{{season.image}}" alt="{{season.seasonNumber}}" >
     <app-episodes [id]="season.id"></app-episodes>
 
