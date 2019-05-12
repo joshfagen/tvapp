@@ -10,6 +10,9 @@ export class Season {
     this.id = args.id;
     this.seasonNumber = args.number;
     this.image = (args.image) ? args.image.medium : null;
+    if(this.image) {
+      this.image = 'https' + this.image.substring(4);
+    }
     if (!args.premiereDate) {
       this.startDate = null;
     } else {
