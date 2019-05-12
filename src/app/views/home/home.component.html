@@ -5,15 +5,15 @@
     <input matInput
            name="name" placeholder="Enter Show"
            type="text"
-           [(ngModel)]="searchQuery">
+           [(ngModel)]="query">
     <button tabIndex="-1" mat-button
-            *ngIf="searchQuery"
+            *ngIf="query"
             matSuffix mat-icon-button
-            (click)="searchQuery = ''">
+            (click)="query = ''">
       <mat-icon>close</mat-icon>
     </button>
     <!--When button's clicked, the user is sent to the search results page. Their query is appended to the route via [(ngModel]) above in the input field.-->
-    <button mat-flat-button routerLink="/shows/{{searchQuery}}" color="accent">Search</button>
+    <button mat-flat-button routerLink="/shows/{{query}}" color="accent">Search</button>
   </mat-form-field>
 
   </form>
