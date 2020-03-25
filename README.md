@@ -1,6 +1,8 @@
 # [TV App](https://github.com/joshfagen/tvapp)
 #### By Joshua Fagen
 
+### [View Project Here](https://joshfagen.github.io/tvapp/home) ###
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
 
 I couldn't have made this without the [TVMaze API](https://api.tvmaze.com). All thanks to them for creating such a wonderful tool and making it available to us so that we can hone our skills.
